@@ -1,0 +1,15 @@
+<button (click)="goBack()"> Back to Overview </button>
+<div *ngIf="country">
+    <h2>{{country.name | uppercase}}</h2>
+    <div><label>Continent: </label><label>{{country.continent}}</label></div>
+    <div><label>Capital: </label><label>{{country.capital}}</label></div>
+    <div><label>Population: </label><label>{{country.population}}</label></div>
+    <div><label>Currencies: </label><label *ngFor="let currency of country.currencies">{{currency.name}} ({{currency.symbol}})</label></div>
+    <div><label>Time Zones: </label><label *ngFor="let zone of country.timeZones">{{zone}}</label></div>
+    <div><label>Flag: </label><img src="{{country.flagUrl}}"/></div>
+</div>
+<!--<map></map>-->
+<p></p>
+<share-page></share-page>
+<p></p>
+<incorrect-data-form></incorrect-data-form>

@@ -1,0 +1,14 @@
+<div class="sort">Sort by
+  <button (click)="sortByName()">Name</button>
+  <button (click)="sortByPopulation()">Population</button>
+</div>
+<country-search></country-search>
+<!--<div class="grid grid-pad">-->
+<div class="container">
+  <div class="grid grid-pad" fxLayout fxLayoutWrap="wrap" fxLayoutAlign="center">
+    <a *ngFor="let country of countries" [routerLink]="['/detail', country.id]"> <!-- class="col-1-4">  -->
+    <!--<country-card [country]="country"></country-card>-->
+    <country-card [country]="country" fxFlex ></country-card>
+    </a>
+  </div>
+</div>
