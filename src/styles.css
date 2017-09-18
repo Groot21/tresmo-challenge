@@ -3,7 +3,8 @@
 
 :root{
   --primaryColor: #d42836;
-  --lightGrey: #eee;
+  --backgroundBright: #eee;
+  --backgroundDark: #ccc;
   --textColor: #555;
 }
 
@@ -13,7 +14,7 @@ h1 {
     font-size: 250%;
   }
   h2, h3 {
-    color: #444;
+    /*color: #444;*/
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
   }
@@ -40,7 +41,7 @@ h4, h5 {
   button {
     margin-top: 20px;
     font-family: Arial;
-    background-color: var(--lightGrey);
+    background-color: var(--backgroundBright);
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
@@ -50,7 +51,7 @@ h4, h5 {
     background-color: #cfd8dc;
   }
   button:disabled {
-    background-color: var(--lightGrey);
+    background-color: var(--backgroundBright);
     color: #ccc; 
     cursor: auto;
   }

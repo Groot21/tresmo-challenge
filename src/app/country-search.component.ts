@@ -21,7 +21,6 @@ import { Country } from './country';
   styleUrls: [ './country-search.component.css' ],
   providers: [CountrySearchService]
 })
-
 export class CountrySearchComponent implements OnInit {
   countries: Observable<Country[]>;
   private searchTerms = new Subject<string>();

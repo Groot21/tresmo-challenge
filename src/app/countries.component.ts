@@ -13,7 +13,6 @@ import { CountryService } from './country.service';
   styleUrls: ['./countries.component.css'] ,
   providers: []
 })
-
 export class CountriesComponent implements OnInit{ 
   selectedCountry: Country;
   countries: Country[];

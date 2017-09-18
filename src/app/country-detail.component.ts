@@ -13,7 +13,6 @@ import { CountryService } from './country.service';
     templateUrl: './country-detail.component.html',
     styleUrls: [ './country-detail.component.css'],
 })
-
 export class CountryDetailComponent implements OnInit{
     @Input() country: Country;
 
@@ -32,4 +31,10 @@ export class CountryDetailComponent implements OnInit{
     goBack() : void {
         this.location.back();
     }
+
+    getFormatedPopulation(): String {
+        return this.country.population
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      }
 }

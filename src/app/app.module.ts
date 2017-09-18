@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard.component';
 import { IncorrectDataFormComponent } from './incorrect-data-form.component';
 import { PopulationComponent } from './population.component';
 import { SharePageComponent } from './share-page.component';
+import { TitleFlagComponent } from './title-with-flag.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { SharePageComponent } from './share-page.component';
     IncorrectDataFormComponent,
     PopulationComponent,
     SharePageComponent,
+    TitleFlagComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,5 @@ import { SharePageComponent } from './share-page.component';
   providers: [CountryService],
   bootstrap: [AppComponent]
 })
-
 export class AppModule { }
 

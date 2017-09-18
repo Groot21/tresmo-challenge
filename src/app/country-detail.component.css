@@ -2,7 +2,7 @@ label {
     display: inline-table;
     width: inherit;
     margin: .5em 0 0 .5em;
-    color: #607D8B;
+    color: var(--textColor);
     font-weight: bold;
   }
   input {
@@ -14,4 +14,7 @@ label {
     display: inline-table;
     width: auto;
     height: 2em;
+  }
+  .grid {
+    display: grid;
   }

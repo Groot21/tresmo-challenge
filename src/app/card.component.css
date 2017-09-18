@@ -1,0 +1,70 @@
+@media screen and (min-width: 290px) {
+  .module {
+    display: flex;
+    align-items: center;
+    background-color: var(--backgroundBright);
+    padding: 10px;
+    margin: 0px;
+    color: var(--textColor);
+    width: 250px;
+    border-radius: 2px; /* rounded edges */
+  }
+  .card-title {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .module {
+    display: flex;
+    align-items: center;
+    background-color: var(--backgroundBright);
+    padding: 10px;
+    margin: 0px;
+    color: var(--textColor);
+    height: 115px;
+    width: 250px;
+    border-radius: 2px; /* rounded edges */
+  }
+  .card-title {
+    display: -webkit-box;
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
+.module:hover {
+  background-color: var(--backgroundDark);
+  cursor: pointer;
+  /*color: #607d8b;*/
+}
+
+.info-text {
+  float: left;
+  /*padding-left: 5px;*/
+  margin: auto; /*horizontally centered */
+  width: 150px;
+}
+
+.card-title {
+  -webkit-margin-before: 0.2em;
+  -webkit-margin-after: 0.7em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  color: var(--primaryColor);
+  font-weight: bold;
+  font-size: 20px;
+}
+.population {
+  vertical-align: bottom;
+}
+
+.flag {
+  float: right;
+  max-height: 100px;
+  max-width: 100px;
+  padding-left: 10px;
+}

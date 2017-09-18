@@ -9,6 +9,9 @@ import { Component } from "@angular/core";
             <img class="icon" src="../assets/icons/google-plus.svg" alt="google+"/>
         </div>`,
         styles: [`
+        div {
+            color: var(--textColor);
+        }
         .icon {
             height: 1.2em;
           }

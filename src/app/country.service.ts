@@ -37,6 +37,11 @@ export class CountryService {
         .catch(this.handleError);
     }
 
+    getDetailedCountry(country: Country): Country {
+        return country;
+        // TODO
+    }
+
     /*getLatLong(id: string): Promise<Number[]> {
         return [4.0 -72.0];
     }*/

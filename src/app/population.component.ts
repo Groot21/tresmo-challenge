@@ -1,31 +1,29 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 import { Country } from "./country";
 
 @Component({
-    selector: "country-population",
-    template: `
+  selector: "country-population",
+  template: `
       <div class="popul">
-        <h5><img src="../assets/icons/population1.svg" alt=""/> {{country.population}}</h5>
+        <h4><img src="../assets/icons/population1.svg" alt=""/> {{getFormatedPopulation()}}</h4>
       </div>
-    `, 
-    styles: [`
-    .popul {
-        text-align: center;
-        float: left;
-    }
-    .popul img {
+    `,
+  styles: [
+    `
+    img {
         height: 0.9em;
         float: left;
-        padding-right: 5px;
-    }
-    .test {
-        display: inline;
-    }
-    `],
+        padding-right: 8px;
+    }`
+  ]
 })
-
-
 export class PopulationComponent {
-    @Input() country: Country;
+  @Input() country: Country;
+
+  getFormatedPopulation(): String {
+    return this.country.population
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
 }

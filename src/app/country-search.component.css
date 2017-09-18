@@ -10,7 +10,7 @@
   }
    
   .search-result:hover {
-    color: #eee;
+    color: var(--textColor);
     background-color: #607D8B;
   }
    
