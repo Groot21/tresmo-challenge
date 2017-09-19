@@ -1,31 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
-import { CountryService } from './country.service'
+import { Country } from "./country";
+
+const MAX_SIZE = 320;
 
 @Component({
-    selector: "map",
-    template: `
-        <h3>My Google Maps Demo</h3>
-        <div id="map"></div> 
-    `,
-    styles: [`
-    #map {
-        width: 100%;
-        height: 400px;
-      }
-    `]
+  selector: "country-map",
+  template: `
+      <div>
+        <a href="https://www.google.com/maps/search/{{this.sliceCountryName(this.countryName)}}">
+        <img src="{{this.getUrl()}}"/>
+        </a>
+      </div> 
+    `
 })
+export class GoogleMapsComponent {
+  @Input() countryName: string;
 
-export class MapComponent implements OnInit{
+  private staticMapUrl = "https://maps.googleapis.com/maps/api/staticmap";
+  private myKey = "AIzaSyCDUPJ4JyL3yoJpUpQgmRh5aeaXAyUAxZQ";
+  private language = "en";
 
-    constructor(private countryService: CountryService) {}
+  sliceCountryName(countryName: string): string {
+    const matchArray = countryName.toLowerCase().match(/\,[a-z| ]+and/g);
+    return matchArray ? countryName.toLowerCase().split(/ and |, /g).map(name => name.concat(' island')).join('|') : countryName;
+  }
 
-    initMap(lat: number, long: number):void {
-        
-    }
+  getSize(): number {
+    return Math.min(MAX_SIZE, Math.round(0.8 * parent.innerWidth));
+  }
 
-    ngOnInit(): void {
-
-    }
-
+  getUrl(): String {
+    return (
+      this.staticMapUrl +
+      "?center=" +
+      encodeURI(this.countryName) +
+      "&" +
+      `size=${this.getSize()}x${this.getSize()}` +
+      "&markers=" +
+      this.sliceCountryName(this.countryName) +
+      "&key=" +
+      this.myKey +
+      "&language=" +
+      this.language
+    );
+  }
 }

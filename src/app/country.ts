@@ -11,6 +11,7 @@ export type Country = {
 
     latitude?: number;
     longitude?: number;
+    // TODO Delete
 
   }
 

@@ -1,18 +1,34 @@
-<button (click)="goBack()"> Back to Overview </button>
-<div *ngIf="country">
-    <h2>{{country.name | uppercase}}</h2>
-    <!--<title-flag [country]="country"></title-flag>-->
-    <div class="grid">
-    <div><label>Continent: </label><label>{{country.continent}}</label></div>
-    <div><label>Capital: </label><label>{{country.capital}}</label></div>
-    <div><label>Population: </label><label>{{getFormatedPopulation()}}</label></div>
-    <div><label>Currencies: </label><label *ngFor="let currency of country.currencies">{{currency.name}} ({{currency.symbol}})</label></div>
-    <div><label>Time Zones: </label><label class="" *ngFor="let zone of country.timeZones">{{zone}}</label></div>
-    <div><label>Flag: </label><img src="{{country.flagUrl}}"/></div>
+
+<div class="panel">
+    <div class="header">
+        <button class="backButton" [routerLink]="['/']"><img src="../assets/icons/back.svg"/></button>
+        <h1 class="title">{{title}}</h1>
+    </div>
+    <!--<button (click)="goBack()"> Back to Overview </button>-->
+    <div class="info" *ngIf="country">           
+            <title-flag [country]="country"></title-flag>
+        <div>
+            <div class="grid">
+                <label>Continent: </label>
+                <label class="value">{{country.continent}}</label>
+                <label>Capital: </label>
+                <label class="value">{{country.capital}}</label>
+                <label>Population: </label>
+                <label class="value">{{getFormatedPopulation()}}</label>
+                <label>Currencies: </label>
+                <div>
+                    <label class="currency" *ngFor="let currency of country.currencies">{{currency.name}} ({{currency.symbol}})</label>
+                </div>
+                <label>Time Zones: </label>
+                <div>
+                    <label class="timeZone" *ngFor="let zone of country.timeZones">{{zone}}</label>
+                </div>
+            </div>
+        </div>
+        <country-map class="map" [countryName]="country.name"></country-map>
+    </div>
+    <p> </p>
+    <share-page class="share-line"></share-page>
+    <p> </p>
+    <incorrect-data-form class="form"></incorrect-data-form>
 </div>
-</div>
-<!--<map></map>-->
-<p></p>
-<share-page></share-page>
-<p></p>
-<incorrect-data-form></incorrect-data-form>

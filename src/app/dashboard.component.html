@@ -1,31 +1,34 @@
-<div class="sort-countries">Sort by
-  <button (click)="sortByName()" (click)="sortByName(!this.nameAsc); reverseNameOrder()">Name
-    <img *ngIf="recentlySortedByName && nameAsc" src="../assets/icons/sort_asc.svg" height="5em"/>
-    <img *ngIf="recentlySortedByName && !nameAsc" src="../assets/icons/sort_desc.svg" height="5em"/>
-  </button>
-  <button (click)="sortByPopulation()" (click)="sortByPopulation(!this.populationAsc); reversePopulationOrder()">Population
-    <img *ngIf="!recentlySortedByName && populationAsc" src="../assets/icons/sort_asc.svg" height="5em"/>
-    <img *ngIf="!recentlySortedByName && !populationAsc" src="../assets/icons/sort_desc.svg" height="5em"/>
-  </button>
-</div>
-<!--<country-search></country-search>-->
-<div class="search-countries">
-  <label>Search</label>
-  <input #searchField id="search-field" (keyup)="getCountriesByTerm(searchField.value)">
-</div>
-<p></p>
-<div class="container">
-  <!--<div *ngFor="let letter of getAlphabet()">
+<div *ngIf="countries" class="panel">
+  <h1 class="title">{{title}}</h1>
+  <div class="sort-search">
+    <div class="sort-countries">Sort by
+      <button class="sortButton" (click)="sortByName()" (click)="sortByName(this.nameAsc); reverseNameOrder()">Name
+        <img src={{getSortNameIcon()}} height="5em"/>
+      </button>
+      <button class="sortButton" (click)="sortByPopulation(!this.populationAsc); reversePopulationOrder()">Population
+        <img src={{getSortPopulationIcon()}} height="5em"/>
+      </button>
+    </div>
+
+    <div class="search-countries">
+      <label>Search </label>
+      <input #searchField id="search-field" (keyup)="getCountriesByTerm(searchField.value)">
+    </div>
+  </div>
+
+  <div class="container">
+    <!--<div *ngFor="let letter of getAlphabet()">
     <label>{{letter}}</label>-->
-  <div class="grid grid-pad" fxLayout fxLayoutGap="10px" fxLayoutWrap="wrap" fxLayoutAlign="center" fx>
-    <a *ngFor="let country of getCountriesByTerm(searchField.value)" [routerLink]="['/detail', country.id]">
-      <!--<a *ngFor="let country of getCountriesByLetter(letter)" [routerLink]="['/detail', country.id]">-->
-      <!-- class="col-1-4">  -->
-      <!--<country-card [country]="country"></country-card>-->
-      <div class="card">
-        <country-card [country]="country" fxFlex></country-card>
-      </div>
-    </a>
-    <!--</div>-->
+    <div class="grid" fxLayout fxLayoutGap="10px" fxLayoutWrap="wrap" fxLayoutAlign="center" fx>
+      <a class="cell" *ngFor="let country of getCountriesByTerm(searchField.value)" [routerLink]="['/detail', country.id]">
+        <!--<a *ngFor="let country of getCountriesByLetter(letter)" [routerLink]="['/detail', country.id]">-->
+        <!--<country-card [country]="country"></country-card>-->
+        <div class="card">
+          <country-card [country]="country" fxFlex></country-card>
+        </div>
+      </a>
+      <a height="0px" width="10px"></a>
+      <!--</div>-->
+    </div>
   </div>
 </div>

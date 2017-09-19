@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
     this.resetNameOrder();
     this.resetPopulationOrder();
     this._initCountries();
-    this.recentlySortedByName = true;
+    /*this.recentlySortedByName = true;*/
   }
 
   async _initCountries(): Promise<void> {
@@ -49,29 +49,26 @@ export class DashboardComponent implements OnInit {
   }
 
   reverseNameOrder(): void {
-      this.nameAsc = !this.nameAsc;
+    this.nameAsc = !this.nameAsc;
   }
 
   reversePopulationOrder(): void {
-      this.populationAsc = !this.populationAsc;
+    this.populationAsc = !this.populationAsc;
   }
 
   resetNameOrder(): void {
-      this.nameAsc = true;
+    this.nameAsc = true;
   }
   resetPopulationOrder(): void {
-      this.populationAsc = false;
+    this.populationAsc = true;
   }
 
   getCountriesByTerm(term: string): Country[] {
-      if(this.countries) {
     return term
       ? this.countries.filter(country =>
-          country.name.toLowerCase().includes(term.toLocaleLowerCase()))
-      : this.countries;}
-      else {
-          return [];
-      }
+          country.name.toLowerCase().includes(term.toLocaleLowerCase())
+        )
+      : this.countries;
   }
 
   getCountriesByLetter(letter: string): Country[] {
@@ -88,7 +85,21 @@ export class DashboardComponent implements OnInit {
     return "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   }
 
-  /*search(term: String): Country[] {
-      return [];
-  }*/
+  getSortNameIcon(): string {
+    if (this.recentlySortedByName === true) {
+      return "../assets/icons/".concat(
+        (this.nameAsc === true)
+        ? "sort_asc.svg"
+        : "sort_desc.svg");
+    }
+  }
+
+  getSortPopulationIcon(): string {
+    if (this.recentlySortedByName === false) {
+      return "../assets/icons/".concat(
+        (this.populationAsc === true)
+        ? "sort_asc.svg"
+        : "sort_desc.svg");
+    }
+  }
 }

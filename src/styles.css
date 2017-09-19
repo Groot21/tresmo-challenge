@@ -11,7 +11,6 @@
 h1 {
     color: var(--primaryColor);/*#369;*/
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
   }
   h2, h3 {
     /*color: #444;*/
@@ -26,9 +25,22 @@ h4, h5 {
   -webkit-margin-end: 0px;
   font-weight: bold;
 }
+@media screen and (min-width: 680px) { 
   body {
-    margin: 2em;
+    width: fit-content;
   }
+}
+
+@media screen and (max-width: 679px) { 
+  body {
+    width: 100%;
+  }
+}
+
+body {
+  margin: auto;
+}
+
   body, input[text], button {
     color: #888;
     font-family: Cambria, Georgia;
@@ -39,7 +51,6 @@ h4, h5 {
   }
 
   button {
-    margin-top: 20px;
     font-family: Arial;
     background-color: var(--backgroundBright);
     border: none;
@@ -54,4 +65,8 @@ h4, h5 {
     background-color: var(--backgroundBright);
     color: #ccc; 
     cursor: auto;
+  }
+
+  .text {
+    color: var(--textColor);
   }

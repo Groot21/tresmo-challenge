@@ -1,11 +1,14 @@
 import { Component, Input , OnInit} from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
+import { formatNumber } from './numberFormatter';
 
 import 'rxjs/add/operator/switchMap';
 
 import { Country } from './country';
 import { CountryService } from './country.service';
+
+/*import {formatString } from './stringFormater';*/
 
 
 @Component({
@@ -15,12 +18,15 @@ import { CountryService } from './country.service';
 })
 export class CountryDetailComponent implements OnInit{
     @Input() country: Country;
+    private title;
 
     constructor(
         private countryService: CountryService,
         private route: ActivatedRoute,
         private location: Location
-    ) {}
+    ) {
+        this.title = "Country Details";
+    }
 
     ngOnInit(): void {
         this.route.paramMap
@@ -28,13 +34,7 @@ export class CountryDetailComponent implements OnInit{
             .subscribe(country => this.country = country);
     }
 
-    goBack() : void {
-        this.location.back();
-    }
-
     getFormatedPopulation(): String {
-        return this.country.population
-          .toString()
-          .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-      }
+        return formatNumber(this.country.population);
+    }
 }

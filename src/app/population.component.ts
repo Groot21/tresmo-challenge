@@ -1,12 +1,13 @@
 import { Component, Input } from "@angular/core";
 
 import { Country } from "./country";
+import { formatNumber } from "./numberFormatter";
 
 @Component({
   selector: "country-population",
   template: `
       <div class="popul">
-        <h4><img src="../assets/icons/population1.svg" alt=""/> {{getFormatedPopulation()}}</h4>
+        <h4><img src="../assets/icons/population1.svg" alt="#"/> {{getFormatedPopulation()}}</h4>
       </div>
     `,
   styles: [
@@ -22,8 +23,6 @@ export class PopulationComponent {
   @Input() country: Country;
 
   getFormatedPopulation(): String {
-    return this.country.population
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return formatNumber(this.country.population);
   }
 }
