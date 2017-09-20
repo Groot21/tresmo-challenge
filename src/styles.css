@@ -1,7 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
 /* Master Styles */
 
-:root{
+:root {
   --primaryColor: #d42836;
   --backgroundBright: #eee;
   --backgroundDark: #ccc;
@@ -9,29 +8,26 @@
 }
 
 h1 {
-    color: var(--primaryColor);/*#369;*/
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  h2, h3 {
-    /*color: #444;*/
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-  }
-h4, h5 {
+  color: var(--primaryColor);
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2,
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+h4,
+h5 {
   display: block;
-  -webkit-margin-before: 0.5em;
-  -webkit-margin-after: 0.7em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
   font-weight: bold;
 }
-@media screen and (min-width: 680px) { 
+@media screen and (min-width: 680px) {
   body {
     width: fit-content;
   }
 }
 
-@media screen and (max-width: 679px) { 
+@media screen and (max-width: 679px) {
   body {
     width: 100%;
   }
@@ -41,32 +37,36 @@ body {
   margin: auto;
 }
 
-  body, input[text], button {
-    color: #888;
-    font-family: Cambria, Georgia;
-  }
-  /* everywhere else */
-  * {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+body,
+input[text],
+button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
 
-  button {
-    font-family: Arial;
-    background-color: var(--backgroundBright);
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer; cursor: hand;
-  }
-  button:hover {
-    background-color: #cfd8dc;
-  }
-  button:disabled {
-    background-color: var(--backgroundBright);
-    color: #ccc; 
-    cursor: auto;
-  }
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  .text {
-    color: var(--textColor);
-  }
+button {
+  font-family: Arial;
+  background-color: var(--backgroundBright);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: var(--backgroundBright);
+  color: #ccc;
+  cursor: auto;
+}
+
+.text {
+  color: var(--textColor);
+}

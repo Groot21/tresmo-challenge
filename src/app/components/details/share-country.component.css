@@ -1,0 +1,14 @@
+div {
+  color: var(--textColor);
+  font-size: 16px;
+}
+
+.icon {
+  height: 18px;
+}
+
+@media screen and (max-width: 680px) {
+  div {
+    margin-right: 12px;
+  }
+}

@@ -1,15 +1,13 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { DashboardComponent } from "./dashboard.component";
-/*import { CountriesComponent } from "./countries.component";*/
-import { CountryDetailComponent } from "./country-detail.component";
+import { DashboardComponent } from "./components/overview/dashboard.component";
+import { DetailsComponent } from "./components/details/details.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/overview", pathMatch: "full" },
   { path: "overview", component: DashboardComponent },
-  { path: "detail/:id", component: CountryDetailComponent }
-  /*{ path: "countries", component: CountriesComponent }*/
+  { path: "detail/:id", component: DetailsComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,43 @@
+textarea {
+    resize: none;
+}
+
+.panel {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 8px;
+    max-width: 400px;
+}
+
+.grid input, .grid textarea {
+    margin: 2px;
+    border: 1px solid var(--backgroundDark)
+}
+
+.grid label {
+    color: var(--textColor);
+    font-size: 14px;
+}
+
+.send-button{
+    margin: 18px 0 12px 0;
+    float: right;
+    border: none;
+}
+
+.info {
+    font-size: 10px;
+}

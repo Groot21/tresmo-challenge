@@ -1,0 +1,32 @@
+<div>
+    <div class="header">
+        <button class="backButton" [routerLink]="['/']"></button>
+        <h1>{{title}}</h1>
+    </div>
+    <div class="info" *ngIf="country">
+        <header [country]="country"></header>
+        <div>
+            <div class="grid">
+                <label>Continent: </label>
+                <label class="value">{{country.continent}}</label>
+                <label>Capital: </label>
+                <label class="value">{{country.capital}}</label>
+                <label>Population: </label>
+                <label class="value">{{getFormatedPopulation()}}</label>
+                <label>Currencies: </label>
+                <div>
+                    <label class="currency" *ngFor="let currency of country.currencies">{{currency.name}} ({{currency.symbol}})</label>
+                </div>
+                <label>Time Zones: </label>
+                <div>
+                    <label class="timeZone" *ngFor="let zone of country.timeZones">{{zone}}</label>
+                </div>
+            </div>
+        </div>
+        <static-map class="map" [country]="country"></static-map>
+    </div>
+    <p> </p>
+    <share-country class="share"></share-country>
+    <p> </p>
+    <incorrect-data-form class="form"></incorrect-data-form>
+</div>

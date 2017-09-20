@@ -1,0 +1,25 @@
+<div *ngIf="countries" class="panel">
+  <h1 class="title">{{title}}</h1>
+  <div class="sort-search" fxLayout fxLayoutWrap="wrap" fxLayoutAlign="center" fx>
+    <div class="sort-countries" fxFlex>
+      <label>Sort by</label>
+      <button class="sortButton" (click)="sortByName()" (click)="sortByName(this.nameAsc); reverseNameOrder()">Name
+        <img src={{getSortNameIcon()}} height="5em"/>
+      </button>
+      <button class="sortButton" (click)="sortByPopulation(!this.populationAsc); reversePopulationOrder()">Population
+        <img src={{getSortPopulationIcon()}} height="5em"/>
+      </button>
+    </div>
+      <input fxFlex #searchField class="search-countries" id="search-field" title="Search" (keyup)="getCountriesByTerm(searchField.value)" placeholder="Search Country...">
+  </div>
+  <div class="container">
+    <div class="grid" fxLayout fxLayoutGap="10px" fxLayoutWrap="wrap" fxLayoutAlign="center" fx>
+      <a class="cell" *ngFor="let country of getCountriesByTerm(searchField.value)" [routerLink]="['/detail', country.id]">
+        <div class="card">
+          <country-card [country]="country" fxFlex></country-card>
+        </div>
+      </a>
+      <a height="0px" width="10px"></a>
+    </div>
+  </div>
+</div>

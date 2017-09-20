@@ -1,9 +1,0 @@
-<!--<div id="search-component">-->
-  <label>Search</label>
-  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
-  <div>
-    <div *ngFor="let country of countries | async" (click)="gotoDetail(country)" class="search-result">
-      {{country.name}}
-    </div>
-  </div>
-<!--</div>-->
