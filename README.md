@@ -1,28 +1,21 @@
-# TresmoChallenge
+# Tresmo Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
+**Herausforderungen bei der Umsetzung**
 
-## Development server
+Besonders herausfordernd war die Implementierung des Services. Dazu gehörte zuallererst die Abgrenzungen zwischen Promises, Reactive Extensions und asynchroner Verarbeitung zu verstehen. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Außerdem stellten das Styling und Layouting der Seiten für verschiedene Devices und Bildschirmgrößen große Herausforderungen dar. 
+Dabei stellte sich besonders das Formatieren der Ländernamen auf der Übersichtsseite als schwierig heraus. Die Umsetzung im Projekt wurde ohne Verwendung von webkit durchgeführt, wodurch ebendiese noch Optimierungspotential besitzt.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Optimierungsmöglichkeiten in der Anwendung**
 
-## Build
+Um die Anwendung zu optimieren, könnten beim Aufruf der Übersichtsseite - anstatt die Basisinformationen aller Länder zu laden - nur die Basisinformationen der benötigten Länder geladen werden, also derjenigen, die auf dem aktuellen Bildschirm zu sehen sein werden. Bei Scrollen, Sortieren oder Filtern würden die Basisinformationen der weiter benötigten Länder erst dann nachgeladen.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Des Weiteren sollte die Zeit zum Rendern der Übersichtsseite verkürzt werden. Dies könnte durch Pagination gelöst werden.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Anwednung starten**
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1) `npm install`
+2) `ng serve --open`
