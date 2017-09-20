@@ -10,12 +10,11 @@ Dabei stellte sich besonders das Formatieren der Ländernamen auf der Übersicht
 
 **Optimierungsmöglichkeiten in der Anwendung**
 
-Um die Anwendung zu optimieren, könnten beim Aufruf der Übersichtsseite - anstatt die Basisinformationen aller Länder zu laden - nur die Basisinformationen der benötigten Länder geladen werden, also derjenigen, die auf dem aktuellen Bildschirm zu sehen sein werden. Bei Scrollen, Sortieren oder Filtern würden die Basisinformationen der weiter benötigten Länder erst dann nachgeladen.
-
-Des Weiteren sollte die Zeit zum Rendern der Übersichtsseite verkürzt werden. Dies könnte durch Pagination gelöst werden.
+Um die Anwendung zu optimieren, könnten beim Aufruf der Übersichtsseite - anstatt die Basisinformationen aller Länder zu laden - mittels Pagination nur die Basisinformationen der Länder geladen werden, die auf dem aktuellen Bildschirm angezeigt werden können. Bei Scrollen, Sortieren oder Filtern würden die Basisinformationen der weiter benötigten Länder erst dann nachgeladen.
 
 
-**Anwednung starten**
+
+**Anwendung starten**
 
 1) `npm install`
 2) `ng serve --open`
