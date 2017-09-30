@@ -7,6 +7,6 @@ import { Component } from "@angular/core";
 })
 export class SharePageComponent {
   doNothing(network: string): void {
-    alert(`Sharing on ${network} will soon be possible (if you hire me ;) )`);
+    alert(`Sharing on ${network} is not yet implemented`);
   }
 }

@@ -14,7 +14,7 @@ import { CountryService } from './services/country.service';
 import { DashboardComponent } from './components/overview/dashboard.component';
 import { StaticMapComponent } from './components/details/static-map.component';
 import { IncorrectDataFormComponent } from './components/details/incorrect-data-form.component';
-import { PopulationComponent } from './components/common/population.component';
+import { PopulationComponent } from './components/overview/population.component';
 import { SharePageComponent } from './components/details/share-country.component';
 import { HeaderComponent } from './components/details/header.component';
 

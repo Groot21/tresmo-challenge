@@ -14,7 +14,7 @@
   </div>
   <div class="container">
     <div class="grid" fxLayout fxLayoutGap="10px" fxLayoutWrap="wrap" fxLayoutAlign="center" fx>
-      <a class="cell" *ngFor="let country of getCountriesByTerm(searchField.value)" [routerLink]="['/detail', country.id]">
+      <a class="cell" *ngFor="let country of getCountriesByTerm(searchField.value)" [routerLink]="['/detail/', country.id]">
         <div class="card">
           <country-card [country]="country" fxFlex></country-card>
         </div>
